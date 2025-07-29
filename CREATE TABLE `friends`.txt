@@ -1,0 +1,8 @@
+CREATE TABLE `friends` (
+  `friends_id` INT AUTO_INCREMENT PRIMARY KEY,
+  `my_id` INT NOT NULL,
+  `my_friend_id` INT NOT NULL,
+  `date_added` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (`my_id`) REFERENCES `members`(`member_id`) ON DELETE CASCADE,
+  FOREIGN KEY (`my_friend_id`) REFERENCES `members`(`member_id`) ON DELETE CASCADE
+);

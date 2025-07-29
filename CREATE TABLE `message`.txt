@@ -1,0 +1,9 @@
+CREATE TABLE `message` (
+  `message_id` INT AUTO_INCREMENT PRIMARY KEY,
+  `sender_id` INT NOT NULL,
+  `reciever_id` INT NOT NULL,
+  `content` TEXT NOT NULL,
+  `date_sended` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (`sender_id`) REFERENCES `members`(`member_id`) ON DELETE CASCADE,
+  FOREIGN KEY (`reciever_id`) REFERENCES `members`(`member_id`) ON DELETE CASCADE
+);
